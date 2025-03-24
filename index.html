@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satisfaction Survey (NPS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="survey-container">
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <form id="surveyForm" method="POST" action="https://script.google.com/macros/s/AKfycby7KqKYGPWoUnNfAlZXsm91yTveaeECQxznPVHx9NOwXdJxJ68FiDP2c8ScyQd-ZgnjzA/exec">
+      <!-- Step 1 -->
+      <div class="step active" data-step="1">
+        <h2>Welcome!</h2>
+        <p>Thank you for taking our survey. We'd love to hear your feedback.</p>
+        <div class="buttons">
+          <button type="button" class="nextBtn" id="nextBtn">Start</button>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="step" data-step="2">
+        <h2>Your Name</h2>
+        <!-- <label for="name">Your Name:</label> -->
+        <input type="text" name="name" id="name" required>
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="button" id="prevBtn">Back</button>
+          <button type="button" id="nextBtn">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step" data-step="3">
+        <h2>Overall Satisfaction</h2>
+        <p>On a scale of 1 (very dissatisfied) to 5 (very satisfied), how would you rate your overall experience?</p>
+        <div class="rating-container">
+          <div class="rating-box" data-value="1">1</div>
+          <div class="rating-box" data-value="2">2</div>
+          <div class="rating-box" data-value="3">3</div>
+          <div class="rating-box" data-value="4">4</div>
+          <div class="rating-box" data-value="5">5</div>
+        </div>
+        <!-- Hidden input field to store the selected rating -->
+        <input type="hidden" name="overall-rating" id="overall-rating">
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="button" id="prevBtn">Back</button>
+          <button type="button" id="nextBtn">Next</button>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="step" data-step="4">
+        <h2>Communication Satisfaction</h2>
+        <p>How satisfied are you with the communication you received from us regarding your case?</p>
+        <div class="star-rating">
+          <span class="star" data-value="1">&#9734;</span>
+          <span class="star" data-value="2">&#9734;</span>
+          <span class="star" data-value="3">&#9734;</span>
+          <span class="star" data-value="4">&#9734;</span>
+          <span class="star" data-value="5">&#9734;</span>
+        </div>
+        <!-- Hidden input field to store the selected rating -->
+        <input type="hidden" name="communication" id="communicationInput">
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="button" id="prevBtn">Back</button>
+          <button type="button" id="nextBtn">Next</button>
+        </div>
+      </div>
+      <!-- Step 5 -->
+      <div class="step" data-step="5">
+        <h2>Feedback</h2>
+        <p>What can we do to improve our service?</p>
+        <div class="text-area-container">
+          <textarea name="feedback" id="feedback" rows="5" style="width: 100%"></textarea>
+          <!-- Buttons -->
+          <div class="buttons">
+            <button type="button" id="prevBtn">Back</button>
+            <button type="button" id="nextBtn">Next</button>
+          </div>
+        </div>
+      </div>
+      <!-- Step 6 -->
+      <div class="step" data-step="6">
+        <h2>Thank you!</h2>
+        <p>Thank you for taking the time to complete our survey. Your feedback is important to us.</p>
+        <div class="buttons">
+          <button type="button" id="prevBtn">Back</button>
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
