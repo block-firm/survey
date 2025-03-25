@@ -103,4 +103,6 @@ function updateStars(rating) {
     };
 });
 
+showStep(0);
+
 
