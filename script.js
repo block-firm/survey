@@ -81,10 +81,16 @@ function updateStars(rating) {
 
 // Step 4: Submit Form
   let form = document.getElementById("surveyForm");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    var xhr = new XMLHttpRequest();
+
+    form.addEventListener("submit", function (e) {
+    e.preventDefault(); 
+    let data = new FormData(form);
+
+    const date = new Date();
+    const formattedDate = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+    data.append("timestamp", formattedDate);
+      
+    let xhr = new XMLHttpRequest();
     xhr.open(form.method, form.action);
     xhr.send(data);
     xhr.onload = function () {
